@@ -5,12 +5,17 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <netdb.h>
+#include <stdbool.h>
+
+#include "menu.h"
+#include "reciever.h"
 
 int main(int argc, char **argv)
 {
     struct sockaddr_in endpoint;
     int sdsocket;
     int addrlen = sizeof(struct sockaddr_in);
+    bool isConnection = false;
 
     if (argc != 3)
     {
@@ -42,17 +47,16 @@ int main(int argc, char **argv)
     }
     else
     {
+        isConnection = true;
         printf("Connection successfull!\n");
     }
 
-
-
-
-
-
-
-
-
+    while (isConnection)
+    {
+        struct Filters filters;
+        getFilters(&filters);
+        break;
+    }
 
     close(sdsocket);
     printf("Connection closed!\n");
