@@ -2,7 +2,7 @@
 
 #include <sys/socket.h>
 
-int sendRequest(struct Filters filters, int sock)
+int sendRequest(int sock, struct Filters filters)
 {
     int bIdx = -1;
     char buffer[MAX_FILTER_LEN * 3];
@@ -27,15 +27,15 @@ int sendRequest(struct Filters filters, int sock)
         buffer[bIdx] = '\0';
     }
     
-    return (int)send(sock, buffer, MAX_FILTER_LEN * 3, 0);
+    return (int)send(sock, buffer, MAX_FILTER_LEN * 3, 0); // 786B
 }
 
-int getResponseWithSize(int sock)
+int getResponseWithSize(int sock, unsigned long* recievedSize)
 {
-    return 0;
+    return recv(sock, recievedSize, sizeof(unsigned long), 0); //8B
 }
 
-int getResponseWithData(int sock)
+int getResponseWithData(int sock, unsigned long size, char* buffer)
 {
     return 0;
 }

@@ -12,5 +12,7 @@ struct Filters
 
 void getFilters(struct Filters *filters);
 void processFilters(struct Filters *filters);
+void displayResponse(char* text);
+int askIfContinue();
 
 #endif

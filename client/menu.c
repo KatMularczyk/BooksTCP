@@ -39,3 +39,23 @@ void processFilters(struct Filters *filters)
         filters->genre[len - 1] = '\0';
     }
 }
+
+void displayResponse(char* text)
+{
+    printf("\n%s\n\n", text);
+}
+
+int askIfContinue()
+{
+    char userResponse;
+    printf("Do You want to ask again? (y/n): ");
+    scanf("%c", &userResponse);
+
+    if (userResponse != 'y')
+    {
+        printf("Bye :)\n");
+        return 0;
+    }
+
+    return 1;
+}

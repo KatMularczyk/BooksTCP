@@ -54,11 +54,29 @@ int main(int argc, char **argv)
     while (isConnection)
     {
         struct Filters filters;
+        unsigned long responseSize = 0;
+        char* responseText;
+        
         getFilters(&filters);
-        break;
-    }
+        sendRequest(sdsocket, filters);
+        if (getResponseWithSize(sdsocket, &responseSize) <= 0)
+            isConnection = false;
+        responseText = malloc(responseSize);
+        if (getResponseWithData(sdsocket, responseSize, responseText) <= 0)
+            isConnection = false;
+        displayResponse(responseText);
+        free(responseText);
 
+        if (isConnection && !askIfContinue())
+        {
+            isConnection = false;
+            printf("Closing connection...\n");
+        }
+        else
+        {
+            printf("Connection lost! Exiting...\n");
+        }
+    }
     close(sdsocket);
-    printf("Connection closed!\n");
     return 0;
 }
