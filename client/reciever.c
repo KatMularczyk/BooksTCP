@@ -1,8 +1,9 @@
 #include "reciever.h"
+#include "stdio.h"
 
 #include <sys/socket.h>
 
-int sendRequest(int sock, struct Filters filters)
+char sendRequest(int sock, struct Filters filters)
 {
     int bIdx = -1;
     char buffer[MAX_FILTER_LEN * 3];
@@ -27,15 +28,25 @@ int sendRequest(int sock, struct Filters filters)
         buffer[bIdx] = '\0';
     }
     
-    return (int)send(sock, buffer, MAX_FILTER_LEN * 3, 0); // 786B
+    size_t bytes_size = send(sock, buffer, MAX_FILTER_LEN * 3, 0); // 786B
+    printf("sendRequest=%u\n", bytes_size);
+    return 0;
 }
 
-int getResponseWithSize(int sock, unsigned long* recievedSize)
+char getResponseWithSize(int sock, unsigned long* recievedSize)
 {
-    return recv(sock, recievedSize, sizeof(unsigned long), 0); //8B
+    size_t bytes_size = recv(sock, recievedSize, sizeof(unsigned long), 0);//8B
+    printf("getResponseWithSize=%u\n", bytes_size);
+    return 0;
 }
 
-int getResponseWithData(int sock, unsigned long size, char* buffer)
+char getResponseWithData(int sock, unsigned long size, char* buffer)
 {
+    size_t received = 0;
+    while (received < size)
+    {
+        received += recv(sock, buffer + received, (size_t)size - received, 0);
+    }
+    printf("getResponseWithData=%u\n", received);
     return 0;
 }

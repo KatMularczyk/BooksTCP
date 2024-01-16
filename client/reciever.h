@@ -3,8 +3,8 @@
 
 #include "menu.h"
 
-int sendRequest(int sock, struct Filters filters);
-int getResponseWithSize(int sock, unsigned long* recievedSize);
-int getResponseWithData(int sock, unsigned long size, char* buffer);
+char sendRequest(int sock, struct Filters filters);
+char getResponseWithSize(int sock, unsigned long* recievedSize);
+char getResponseWithData(int sock, unsigned long size, char* buffer);
 
 #endif
