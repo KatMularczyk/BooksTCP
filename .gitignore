@@ -52,6 +52,6 @@ Mkfile.old
 dkms.conf
 
 .vscode
-*.vs
+*.vs/*
 bin
 obj
