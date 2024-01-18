@@ -40,18 +40,20 @@ namespace BooksTCP
         public static void Data_IN(object cSocket)//receive data from client
         {
             Socket clientSocket = (Socket)cSocket;
-            byte[] Buffer;
+            byte[] buffer;
             int readBytes;
 
             for(; ; )
             {
-                Buffer = new byte[clientSocket.SendBufferSize];
-                readBytes = clientSocket.Receive(Buffer);
+                buffer = new byte[clientSocket.SendBufferSize];
+                readBytes = clientSocket.Receive(buffer);
 
                 if (readBytes > 0)
                 {
-                    Packet packet = new Packet(Buffer);
-                    DataManager(packet);
+                    Console.WriteLine(buffer.ToString());
+                    Console.WriteLine(readBytes);
+                    /*Packet packet = new Packet(Buffer);
+                    DataManager(packet);*/
                 }
             }
 
