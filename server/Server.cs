@@ -2,15 +2,19 @@
 using System.IO;
 using ServerData;
 using System.Net;
+using System.Threading;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Data;
 
 namespace BooksTCP
 {
-    internal class Program
+    class Server
     {
         static Socket listenerSocket;
         static List<ClientData> _clients;
         static void Main(string[] args)
         {
+            Console.WriteLine("Starting server on " + Packet.GetIP4Address());  
             listenerSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp); //create socket
             _clients = new List<ClientData>(); //create the clients list
 
@@ -30,6 +34,31 @@ namespace BooksTCP
                 listenerSocket.Listen();
                 _clients.Add(new ClientData(listenerSocket.Accept()));
             }
+
+        }
+
+        public static void Data_IN(object cSocket)//receive data from client
+        {
+            Socket clientSocket = (Socket)cSocket;
+            byte[] Buffer;
+            int readBytes;
+
+            for(; ; )
+            {
+                Buffer = new byte[clientSocket.SendBufferSize];
+                readBytes = clientSocket.Receive(Buffer);
+
+                if (readBytes > 0)
+                {
+                    Packet packet = new Packet(Buffer);
+                    DataManager(packet);
+                }
+            }
+
+        }
+
+        public static void DataManager(Packet p)
+        {
 
         }
 

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksTCP", "BooksTCP.csproj", "{A2E572B5-22DF-48EB-8693-3925DC3BC787}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksTCP", "BooksTCP.csproj", "{A2E572B5-22DF-48EB-8693-3925DC3BC787}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerData", "..\ServerData\ServerData.csproj", "{A8397BF2-A4DD-4C25-A004-56E39AA36964}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerData", "..\ServerData\ServerData.csproj", "{78D8266E-479F-41EA-A15D-FB718F8826D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{A2E572B5-22DF-48EB-8693-3925DC3BC787}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2E572B5-22DF-48EB-8693-3925DC3BC787}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2E572B5-22DF-48EB-8693-3925DC3BC787}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A8397BF2-A4DD-4C25-A004-56E39AA36964}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A8397BF2-A4DD-4C25-A004-56E39AA36964}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A8397BF2-A4DD-4C25-A004-56E39AA36964}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A8397BF2-A4DD-4C25-A004-56E39AA36964}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78D8266E-479F-41EA-A15D-FB718F8826D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78D8266E-479F-41EA-A15D-FB718F8826D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78D8266E-479F-41EA-A15D-FB718F8826D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78D8266E-479F-41EA-A15D-FB718F8826D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
