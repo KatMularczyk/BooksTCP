@@ -5,6 +5,7 @@ using System.Net;
 using System.Threading;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Data;
+using static System.Reflection.Metadata.BlobBuilder;
 
 namespace BooksTCP
 {
@@ -24,6 +25,13 @@ namespace BooksTCP
 
             Thread listenThread = new Thread(ListenThread);
             listenThread.Start();
+            JsonReader r = new JsonReader("C:\\Users\\lenovo\\source\\repos\\BooksTCP\\server\\books.json");
+            List<Books> b = new List<Books>();
+            b = r.listCreator();
+            foreach (Books book in b) 
+            { 
+                book.printBookData();
+            }
 
         }
 
@@ -40,29 +48,38 @@ namespace BooksTCP
         public static void Data_IN(object cSocket)//receive data from client
         {
             Socket clientSocket = (Socket)cSocket;
-            byte[] buffer;
+            byte[] data;
             int readBytes;
 
             for(; ; )
             {
-                buffer = new byte[clientSocket.SendBufferSize];
-                readBytes = clientSocket.Receive(buffer);
+                // Buffer to store the response bytes.
+                data = new Byte[786];
 
-                if (readBytes > 0)
+                // String to store the response ASCII representation.
+                String responseData = String.Empty;
+
+                // Read the first batch of the TcpServer response bytes.
+                readBytes = clientSocket.Receive(data); //(**This receives the data using the byte method**)
+                responseData = System.Text.Encoding.ASCII.GetString(data, 0, readBytes); //(**This converts it to string**)
+                
+                
+
+                /*if (readBytes > 0)
                 {
-                    Console.WriteLine(buffer.ToString());
+                    Console.WriteLine(responseData);
                     Console.WriteLine(readBytes);
-                    /*Packet packet = new Packet(Buffer);
-                    DataManager(packet);*/
-                }
+                    *//*Packet packet = new Packet(Buffer);
+                    DataManager(packet);*//*
+                }*/
             }
 
         }
 
-        public static void DataManager(Packet p)
+        /*public static void DataManager(string responseData)
         {
 
-        }
+        }*/
 
     }
 }

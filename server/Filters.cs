@@ -1,6 +1,8 @@
-﻿using System;
+﻿using ServerData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -30,8 +32,31 @@ namespace BooksTCP
             set { _genre = value; }
         }
 
+        public static void DataManager(string toParse)
+        {
+            toParse = toParse.ToLower();
+            
+            string[] titlesAuthorsGenres = toParse.Split("\n");//splits received data into an array of filters
+            List<string[]> tiAuGe = new List<string[]>();
+            string[] titles = titlesAuthorsGenres[0].Split(',');
+            tiAuGe.Add(titles);
+            string[] authors = titlesAuthorsGenres[1].Split(',');
+            tiAuGe.Add(authors);
+            string[] genres = titlesAuthorsGenres[2].Split(',');
+            tiAuGe.Add(genres);
+
+
+
+
+        }
+
+
+
+
+
         public Filters(byte[] packetbytes)
         {
+            
 
         }
 

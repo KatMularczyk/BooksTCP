@@ -1,0 +1,147 @@
+﻿[
+  {
+    "title": "The Warded Man",
+    "author": "Peter V. Brett",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "The Desert Spear",
+    "author": "Peter V. Brett",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "The Daylight War",
+    "author": "Peter V. Brett",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "The Skull Throne",
+    "author": "Peter V. Brett",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "The Core",
+    "author": "Peter V. Brett",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Introduction to Calculus",
+    "author": "Thomas Calculus",
+    "genre": "Mathematics"
+  },
+  {
+    "title": "Linear Algebra and Its Applications",
+    "author": "Gilbert Strang",
+    "genre": "Mathematics"
+  },
+  {
+    "title": "Number Theory",
+    "author": "George E. Andrews",
+    "genre": "Mathematics"
+  },
+  {
+    "title": "Principles of Mathematical Analysis",
+    "author": "Walter Rudin",
+    "genre": "Mathematics"
+  },
+  {
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "genre": "Classic Literature"
+  },
+  {
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "genre": "Classic Literature"
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "genre": "Classic Literature"
+  },
+  {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Classic Literature"
+  },
+  {
+    "title": "The Iliad",
+    "author": "Homer",
+    "genre": "Classic Literature"
+  },
+  {
+    "title": "The Art of War",
+    "author": "Sun Tzu",
+    "genre": "Historical"
+  },
+  {
+    "title": "A History of the World in 10 1/2 Chapters",
+    "author": "Julian Barnes",
+    "genre": "Historical"
+  },
+  {
+    "title": "The Rise and Fall of the Third Reich",
+    "author": "William L. Shirer",
+    "genre": "Historical"
+  },
+  {
+    "title": "The Guns of August",
+    "author": "Barbara W. Tuchman",
+    "genre": "Historical"
+  },
+  {
+    "title": "The Diary of Anne Frank",
+    "author": "Anne Frank",
+    "genre": "Historical"
+  },
+  {
+    "title": "The Name of the Wind",
+    "author": "Patrick Rothfuss",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "The Wise Man's Fear",
+    "author": "Patrick Rothfuss",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Mistborn: The Final Empire",
+    "author": "Brandon Sanderson",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "genre": "Science Fiction"
+  },
+  {
+    "title": "Lord of the Rings: The Fellowship of the Ring",
+    "author": "J.R.R. Tolkien",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "The Hitchhiker's Guide to the Galaxy",
+    "author": "Douglas Adams",
+    "genre": "Science Fiction"
+  },
+  {
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "genre": "Classic Literature"
+  },
+  {
+    "title": "A Brief History of Time",
+    "author": "Stephen Hawking",
+    "genre": "Science"
+  },
+  {
+    "title": "The Federalist Papers",
+    "author": "Alexander Hamilton, James Madison, John Jay",
+    "genre": "Political Philosophy"
+  },
+  {
+    "title": "The Decline and Fall of the Roman Empire",
+    "author": "Edward Gibbon",
+    "genre": "Historical"
+  }
+]
