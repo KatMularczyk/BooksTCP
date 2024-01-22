@@ -59,20 +59,24 @@ int main(int argc, char **argv)
         
         getFilters(&filters);
         sendRequest(sdsocket, filters);
-        if (getResponseWithSize(sdsocket, &responseSize) <= 0)
-            isConnection = false;
-        responseText = malloc(responseSize);
-        if (getResponseWithData(sdsocket, responseSize, responseText) <= 0)
-            isConnection = false;
-        displayResponse(responseText);
-        free(responseText);
+        if (!getResponseWithSize(sdsocket, &responseSize))
+        {
+            responseText = malloc(responseSize);
+            if (!getResponseWithData(sdsocket, responseSize, responseText))
+            {
+                displayResponse(responseText);
+            }
+            else isConnection = false;
+            free(responseText);
+        }
+        else isConnection = false;
 
         if (isConnection && !askIfContinue())
         {
             isConnection = false;
             printf("Closing connection...\n");
         }
-        else
+        else if (!isConnection)
         {
             printf("Connection lost! Exiting...\n");
         }

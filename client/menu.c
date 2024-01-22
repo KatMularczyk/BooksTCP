@@ -9,16 +9,17 @@ void getFilters(struct Filters *filters)
         "(you can leave filter blank or enter multiple separated "
         "by ',' up to %d characters)\n", MAX_FILTER_LEN);
 
-    printf("Filter by AUTHOR: ");
-    fgets(filters->author, MAX_FILTER_LEN, stdin);
-
     printf("Filter by TITLE: ");
+    // fflush(stdin);
     fgets(filters->title, MAX_FILTER_LEN, stdin);
 
-    printf("Filter by GENRE: ");
-    fgets(filters->genre, MAX_FILTER_LEN, stdin);
+    printf("Filter by AUTHOR: ");
+    // fflush(stdin);
+    fgets(filters->author, MAX_FILTER_LEN, stdin);
 
-    processFilters(filters);
+    printf("Filter by GENRE: ");
+    // fflush(stdin);
+    fgets(filters->genre, MAX_FILTER_LEN, stdin);
 }
 
 void processFilters(struct Filters *filters)
@@ -47,11 +48,12 @@ void displayResponse(char* text)
 
 int askIfContinue()
 {
-    char userResponse;
+    char* userResponse;
     printf("Do You want to ask again? (y/n): ");
-    scanf("%c", &userResponse);
+    fgets(userResponse, 5, stdin);
+    fflush(stdin);
 
-    if (userResponse != 'y')
+    if (userResponse[0] != 'y')
     {
         printf("Bye :)\n");
         return 0;
